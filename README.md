@@ -102,6 +102,6 @@ Swagger UI: http://127.0.0.1:8002/docs
   <img alt="2" src="./api_pictures/first.png">
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./api_pictures/first.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./api_pictures/second.png">
   <img alt="3" src="./api_pictures/second.png">
 </picture>
