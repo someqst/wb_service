@@ -1,0 +1,6 @@
+DB_URI = postgresql+asyncpg://postgres:123@db:5432/wb_db
+BOT_TOKEN = ...
+
+POSTGRES_USER = postgres
+POSTGRES_PASSWORD = 123
+POSTGRES_DB = wb_db
