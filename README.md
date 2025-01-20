@@ -94,14 +94,10 @@ Swagger UI: http://127.0.0.1:8002/docs
 
 # Примеры обращений к API через swagger
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./api_pictures/photo_2025-01-13_04-40-27.jpg">
-  <img alt="1" src="./api_pictures/photo_2025-01-13_04-40-27.jpg">
-</picture>
-<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./api_pictures/first.png">
-  <img alt="2" src="./api_pictures/first.png">
+  <img alt="1" src="./api_pictures/first.png">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./api_pictures/second.png">
-  <img alt="3" src="./api_pictures/second.png">
+  <img alt="2" src="./api_pictures/second.png">
 </picture>
