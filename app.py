@@ -32,7 +32,7 @@ async def load_info_to_bd(product: ProductsPOST, credentials: Annotated[HTTPAuth
         raise HTTPException(403, 'No product found')
 
 
-@app.get('/api/v1/subscribe/{artikul}', response_model=ProductInfo, summary='Запуск периодичного сбора данных')
+@app.get('/api/v1/subscribe/{artikul}', response_model=ProductInfo, summary='Запуск периодического сбора данных')
 async def load_info_to_bd(artikul: int, credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)]):
     if credentials.credentials != 'verystrongauthxd':
         raise HTTPException(401, 'Invalid username or password')   
