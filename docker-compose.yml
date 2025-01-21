@@ -9,10 +9,10 @@ services:
     ports:
       - "8002:8002"
     env_file:
-      - .env
+      - src/data/.env
     depends_on:
       - db
-    command: bash -c 'alembic upgrade head && python3 app.py'
+    command: bash -c 'alembic upgrade head && cd src/ && python3 app.py'
 
   bot:
     container_name: wb_bot
@@ -20,15 +20,15 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - .env
+      - src/data/.env
     depends_on:
       - db
-    command: bash -c 'python3 bot.py'
+    command: bash -c 'cd src/ && python3 bot.py'
       
   db:
     image: postgres:15
     env_file:
-      - .env
+      - src/data/.env
     ports:
       - "5433:5432"
     volumes:

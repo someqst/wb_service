@@ -1,4 +1,4 @@
-import asyncio
+import asyncio, sys, os
 from fastapi import FastAPI
 from back.utils.shedule_get import scheduler
 from uvicorn import Config, Server
@@ -9,6 +9,7 @@ from back.pages.post import router as post_router
 
 app = FastAPI()
     
+
 app.include_router(post_router, prefix='/api/v1/products', tags=['POST'])
 app.include_router(get_router, prefix='/api/v1/subscribe', tags=['GET'])
 
