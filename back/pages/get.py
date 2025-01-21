@@ -4,8 +4,8 @@ from loader import db
 from back.utils.load_info import get_info
 from fastapi.exceptions import HTTPException
 from data.schemes import ProductInfo
-from typing import Annotated
-from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from fastapi.security import HTTPBearer
+from back.pages.auth import authenticate
 
 
 router = APIRouter()
@@ -13,10 +13,7 @@ security = HTTPBearer()
 
 
 @router.get('/{artikul}', response_model=ProductInfo, summary='Запуск периодического сбора данных')
-async def load_info_to_bd(artikul: int, credentials: Annotated[HTTPAuthorizationCredentials, Depends(security)]):
-    if credentials.credentials != 'verystrongauthxd':
-        raise HTTPException(401, 'Invalid username or password')   
-
+async def load_info_to_bd(artikul: int, credentials: str = Depends(authenticate)):
     product_info = await get_info(artikul)
     if product_info:
         name = product_info.data.products[0].name
@@ -26,4 +23,4 @@ async def load_info_to_bd(artikul: int, credentials: Annotated[HTTPAuthorization
         await db.write_product_schedule(artikul, name, price, rating, total_quantity)
         return product_info
     else:
-        raise HTTPException(403, 'No product found')
+        raise HTTPException(404, 'No product found')

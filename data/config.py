@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     POSTGRES_USER: SecretStr
     POSTGRES_PASSWORD: SecretStr
     POSTGRES_DB: SecretStr
+    HTTPBEARER: SecretStr
     
     model_config = SettingsConfigDict(
         env_file='.env',

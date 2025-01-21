@@ -4,7 +4,6 @@ from back.utils.load_info import get_info
 
 
 async def schedule_parse():
-    print('start')
     products = await db.select_scheduled_products()
     if products:
         for product in products:

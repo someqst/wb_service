@@ -14,13 +14,11 @@ app.include_router(get_router, prefix='/api/v1/subscribe', tags=['GET'])
 
 async def main():
     scheduler.start()
-    print("Scheduler started")
 
     server = Server(Config(app=app, host='0.0.0.0', port=8002))
     await server.serve()
 
     scheduler.shutdown()
-    print("Scheduler shutdown")
 
 if __name__ == '__main__':
     asyncio.run(main())
