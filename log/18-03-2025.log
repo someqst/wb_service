@@ -1,0 +1,72 @@
+2025-03-18T00:00:21.583358+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:01:25.918986+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:02:15.449430+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:02:58.332380+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:03:11.289697+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:03:52.648594+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:06:12.434804+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value={'_sa_instance_state': <s...5, 'total_quantity': 79}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-18T00:06:34.829168+0300 ERROR 2 validation errors for Product
+salePriceU
+  Field required [type=missing, input_value=<src.database.models.prod...t at 0x0000021E0D1FA390>, input_type=Product]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+totalQuantity
+  Field required [type=missing, input_value=<src.database.models.prod...t at 0x0000021E0D1FA390>, input_type=Product]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+

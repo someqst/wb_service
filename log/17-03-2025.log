@@ -1,0 +1,21 @@
+2025-03-17T23:50:00.671374+0300 ERROR object NoneType can't be used in 'await' expression
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-17T23:50:36.583843+0300 ERROR object NoneType can't be used in 'await' expression
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-17T23:51:32.365077+0300 ERROR object NoneType can't be used in 'await' expression
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-17T23:52:20.545370+0300 ERROR 1 validation error for Product
+  Input should be a valid dictionary or instance of Product [type=model_type, input_value=<src.database.models.prod...t at 0x00000202F7507080>, input_type=Product]
+    For further information visit https://errors.pydantic.dev/2.10/v/model_type
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
+2025-03-17T23:59:07.535582+0300 ERROR (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: повторяющееся значение ключа нарушает ограничение уникальности "product_pkey"
+DETAIL:  Ключ "(article)=(278860420)" уже существует.
+[SQL: INSERT INTO product (article, name, price, rating, total_quantity, is_scheduled) VALUES ($1::BIGINT, $2::VARCHAR, $3::BIGINT, $4::BIGINT, $5::BIGINT, $6::BOOLEAN)]
+[parameters: (278860420, 'Подушка диванная декоративная 60х40 см', 99700, 5, 79, False)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Endpoint: http://127.0.0.1:8000/api/v1/product/?article=278860420
+
