@@ -1,4 +1,3 @@
-import asyncio
 from fastapi import Depends
 from aiogram import F, Dispatcher, Bot
 from aiogram.filters import CommandStart
@@ -7,17 +6,18 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from src.service.product import ProductService
 from src.api.dependencies import get_product_service
+from src.core.config import settings
 
 
 dp = Dispatcher()
-bot = Bot()
+bot = Bot(settings.BOT_TOKEN.get_secret_value())
 
 
 @dp.message(CommandStart())
 async def start_cmd(message: Message):
     kb = InlineKeyboardBuilder()
     kb.button(text="Получить данные по товару", callback_data="get_data")
-    await message.answer(
+    return await message.answer(
         "Хотите получить данные по товару?", reply_markup=kb.as_markup()
     )
 
@@ -25,7 +25,7 @@ async def start_cmd(message: Message):
 @dp.callback_query(F.data == "get_data")
 async def get_data(call: CallbackQuery):
     await call.answer()
-    await call.message.answer("Введите артикул товара *(число)*", parse_mode="Markdown")
+    return await call.message.answer("Введите артикул товара *(число)*", parse_mode="Markdown")
 
 
 @dp.message(F.text)
@@ -48,11 +48,3 @@ async def text_message(
 """,
         parse_mode="Markdown",
     )
-
-
-async def main():
-    await dp.start_polling(bot)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())

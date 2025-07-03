@@ -12,16 +12,16 @@ services:
       - wild_db
     command: bash -c 'source .venv/bin/activate && alembic upgrade head && python3 main.py'
 
-  bot:
-    container_name: wb_bot
-    build:
-      context: ..
-      dockerfile: deploy/Dockerfile
-    env_file:
-      - ../.env
-    depends_on:
-      - wild_db
-    command: bash -c 'cd ../bot/ && python3 main.py'
+  # bot:
+  #   container_name: wb_bot
+  #   build:
+  #     context: ..
+  #     dockerfile: deploy/Dockerfile
+  #   env_file:
+  #     - ../.env
+  #   depends_on:
+  #     - wild_db
+  #   command: bash -c 'source .venv/bin/activate && python3 bot/main.py'
       
   wild_db:
     image: postgres:15

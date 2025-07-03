@@ -1,21 +1,24 @@
 import uvicorn
+import asyncio
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request
 from fastapi.exceptions import HTTPException
 from contextlib import asynccontextmanager
-from fastapi.responses import RedirectResponse
 
 from src.util.logging import logger
 from src.api.router.handler import router as product_router
 from src.api.router.docs import router as docs_router
 from src.util.schedule_get import scheduler
+from bot.main import dp, bot
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
+async def lifespan():
     scheduler.start()
+    task = asyncio.create_task(dp.start_polling(bot))
     yield
+    task.cancel()
     scheduler.shutdown()
 
 
