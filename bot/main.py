@@ -37,7 +37,6 @@ async def text_message(
     product_info = await product_service.get_product(int(message.text))
     if not product_info:
         return await message.answer("По этому товару нет информации")
-    # В тз, написано, что данные берутся из БД, так что даю такой ответ. Можно было бы напрямую у ВБ брать, в случае, если в бд нет инфы
 
     return await message.answer(
         f"""
