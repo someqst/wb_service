@@ -14,7 +14,7 @@ from bot.main import dp, bot
 
 
 @asynccontextmanager
-async def lifespan():
+async def lifespan(app):
     scheduler.start()
     task = asyncio.create_task(dp.start_polling(bot))
     yield
