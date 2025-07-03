@@ -15,6 +15,9 @@ COPY pyproject.toml /wb_service/
 # Устанавливаем uv
 RUN pip install uv
 
+# Создаем виртуальное окружение, необходимое для uv
+RUN uv venv
+
 # Устанавливаем зависимости
 RUN uv pip install -r pyproject.toml
 

@@ -4,9 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request
 from fastapi.exceptions import HTTPException
 from contextlib import asynccontextmanager
+from fastapi.responses import RedirectResponse
 
 from src.util.logging import logger
 from src.api.router.handler import router as product_router
+from src.api.router.docs import router as docs_router
 from src.util.schedule_get import scheduler
 
 
@@ -36,8 +38,9 @@ async def handle_exceptions_middleware(req: Request, ex: Exception):
     raise HTTPException(status_code=500, detail="Internal Server Error")
 
 
+app.include_router(docs_router)
 app.include_router(product_router, prefix="/api/v1/product", tags=["product"])
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1")
+    uvicorn.run(app, host="0.0.0.0", port=8002)
